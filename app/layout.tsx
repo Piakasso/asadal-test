@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 export const metadata: Metadata = {
   title: "Transactions",
@@ -15,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="px-4 max-w-[1200px] min-h-[100vh] mx-auto overflow-hidden">
-          {children}
+          <ErrorBoundary>{children}</ErrorBoundary>
         </div>
       </body>
     </html>

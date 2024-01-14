@@ -36,8 +36,8 @@ export interface FilterDropdownButtonProps {
 export interface FiltersProp {
   type: string;
   category: string;
-  startdate: string;
-  enddate: string;
+  startdate?: string;
+  enddate?: string;
 }
 
 export interface HomeProp {

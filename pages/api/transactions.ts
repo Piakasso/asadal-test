@@ -166,9 +166,9 @@ const transactions = [
     sum: 350,
   },
 ];
-export default function handler(_req: NextApiRequest, res: NextApiResponse) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const { type, category } = _req.query;
+    const { type, category } = req.query;
     let filteredTransaction = transactions;
 
     if (type || category) {

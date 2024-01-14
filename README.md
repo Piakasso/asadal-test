@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Начало работы
 
-## Getting Started
-
-First, run the development server:
-
-```bash
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере чтобы увидеть результат.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Используемые библиотеки и технологии
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Typescript, NextJS
+- Tailwindcss React, headlessui
+- Moment, React DatePicker
+- Axios, json-server, concurrently
 
-## Learn More
+### Использование
 
-To learn more about Next.js, take a look at the following resources:
+- в файле db.json находится mock database.
+- в папке constants находятся массивы фильтровб категорий и табов
+- в папке utils вспомогательные функции
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Фичи
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1.
 
-## Deploy on Vercel
+- Отображение списка транзакций, включающего информацию о дате, сумме, типе транзакции и деталях
+- Каждая транзакция кликабельна, чтобы пользователь мог просматривать подробности транзакции
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Добавлены фильтры для периода времени, типа транзакции и категории
+- Реализан функционал поиска по категории с автодополнением для удобства пользователя
+- Обновление списка транзакций в реальном времени при применении фильтров или поиске
+
+3.
+
+- Добавлена 2 диаграммы, отображающая распределение транзакций по типам или категориям
+- Баланс меняется с зависимости от фильтров за период времени, категории и типу
+
+4.
+
+- обработка ошибок, при неправильном endpoint'е
+- Страница 404, при переходе на неправильный путь
+- адаптив сайта до 320px

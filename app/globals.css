@@ -1,27 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap");
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Sora", sans-serif;
+  font-size: 14px;
+  @apply bg-black;
+  @apply text-white;
+  min-height: 100vh;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.react-datepicker-wrapper input {
+  @apply text-blue-300;
+  padding: 5px 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.react-datepicker-wrapper input::placeholder {
+  @apply text-blue-100;
+}
+
+.react-datepicker__header,
+.react-datepicker__day--selected {
+  @apply bg-gradient-to-r from-blue-300 to-blue-100;
 }

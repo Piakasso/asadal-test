@@ -11,24 +11,26 @@ export default async function Home({ searchParams }: HomeProp) {
   const transactions: Transactions = await fetchTransactions({
     type: searchParams.type || "",
     category: searchParams.category || "",
+    startdate: searchParams.startdate || "",
+    enddate: searchParams.enddate || "",
   });
 
-  const isDataEmpty =
-    !Array.isArray(transactions) || transactions.length < 1 || !transactions;
-
   const filteredByDateTransactions =
-    !searchParams.startDate && !searchParams.endDate
+    !searchParams.startdate && !searchParams.enddate
       ? transactions
       : transactions.filter((transaction) => {
           const transactionDate = moment(transaction.date, "DD-MM-YYYY");
-          const startDate = moment(searchParams.startDate, "DD-MM-YYYY");
-          const endDate = moment(searchParams.endDate, "DD-MM-YYYY");
+          const startDate = moment(searchParams.startdate, "DD-MM-YYYY");
+          const endDate = moment(searchParams.enddate, "DD-MM-YYYY");
 
           return (
             transactionDate.isSameOrAfter(startDate) &&
             transactionDate.isSameOrBefore(endDate)
           );
         });
+
+  const isDataEmpty =
+    !Array.isArray(transactions) || transactions.length < 1 || !transactions;
 
   return (
     <main className="flex flex-col">

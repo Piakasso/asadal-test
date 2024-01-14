@@ -25,8 +25,8 @@ const Calendar = () => {
       router.push(newPathname);
     } else {
       const searchParams = new URLSearchParams(window.location.search);
-      searchParams.delete("startDate");
-      searchParams.delete("endDate");
+      searchParams.delete(start.type);
+      searchParams.delete(end.type);
       router.push(`${window.location.pathname}?${searchParams.toString()}`, {
         scroll: false,
       });
@@ -35,8 +35,8 @@ const Calendar = () => {
 
   useEffect(() => {
     handleStartParams(
-      { type: "startDate", value: moment(startDate).format("DD-MM-YYYY") },
-      { type: "endDate", value: moment(endDate).format("DD-MM-YYYY") }
+      { type: "startdate", value: moment(startDate).format("DD-MM-YYYY") },
+      { type: "enddate", value: moment(endDate).format("DD-MM-YYYY") }
     );
   }, [startDate, endDate]);
 

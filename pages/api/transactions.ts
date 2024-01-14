@@ -1,3 +1,4 @@
+import moment from "moment";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const transactions = [
@@ -169,7 +170,6 @@ const transactions = [
 export default function handler(_req: NextApiRequest, res: NextApiResponse) {
   try {
     const { type, category } = _req.query;
-
     let filteredTransaction = transactions;
 
     if (type || category) {

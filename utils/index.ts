@@ -5,12 +5,16 @@ export async function fetchTransactions(filters: FiltersProp) {
   const { type, category } = filters;
 
   try {
-    const response = await axios.get("/api/transactions/", {
-      params: {
-        type,
-        category,
-      },
-    });
+    const { startdate, enddate } = filters;
+    const response = await axios.get(
+      `http://localhost:3000/api/transactions/?${startdate}&${enddate}`,
+      {
+        params: {
+          type,
+          category,
+        },
+      }
+    );
 
     return response.data;
   } catch (error) {

@@ -1,12 +1,15 @@
 ## Начало работы
 
-Измените в /utils/index.js запрос на "http://localhost:3000/api/transactions/"
-
 npm run dev
+
 ### or
+
 yarn dev
+
 ### or
+
 pnpm dev
+
 ### or
 
 Откройте [http://localhost:3000](http://localhost:3000) в браузере чтобы увидеть результат.
@@ -20,7 +23,7 @@ pnpm dev
 
 ### Использование
 
-- Mock API доступен по пути /api
+- Mock API доступен по пути http://localhost:3000/api
 - в папке constants находятся массивы фильтровб категорий и табов
 - в папке utils вспомогательные функции
 

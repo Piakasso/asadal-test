@@ -7,7 +7,7 @@ export async function fetchTransactions(filters: FiltersProp) {
   try {
     const { startdate, enddate } = filters;
     const response = await axios.get(
-      `/api/transactions/?${startdate}&${enddate}`,
+      `http://localhost:3000/api/transactions/?${startdate}&${enddate}`,
       {
         params: {
           type,

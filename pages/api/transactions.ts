@@ -1,4 +1,3 @@
-import moment from "moment";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 const transactions = [

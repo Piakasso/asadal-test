@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import FilterDropdownButton from "./FilterDropdownButton";
@@ -17,6 +17,14 @@ const FiltersPanel = () => {
     setSelected(e.value);
     router.push(newPathname, { scroll: false });
   };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const typeQueryParam = searchParams.get("type");
+    if (typeQueryParam) {
+      setSelected(typeQueryParam);
+    }
+  }, []);
 
   return (
     <div className="flex grow-0 flex-col md:flex-row gap-3 justify-between items-center py-5">

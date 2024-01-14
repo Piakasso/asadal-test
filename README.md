@@ -1,5 +1,7 @@
 ## Начало работы
 
+Измените в /utils/index.js запрос на "http://localhost:3000/api/transactions/"
+
 npm run dev
 ### or
 yarn dev
@@ -14,11 +16,11 @@ pnpm dev
 - Typescript, NextJS
 - Tailwindcss React, headlessui
 - Moment, React DatePicker
-- Axios, json-server, concurrently
+- Axios
 
 ### Использование
 
-- в файле db.json находится mock database.
+- Mock API доступен по пути /api
 - в папке constants находятся массивы фильтровб категорий и табов
 - в папке utils вспомогательные функции
 

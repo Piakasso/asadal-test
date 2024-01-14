@@ -1,16 +1,11 @@
 import axios from "axios";
-import {
-  FiltersProp,
-  SumsByCategory,
-  Transaction,
-  Transactions,
-} from "@/types";
+import { FiltersProp, SumsByCategory, Transactions } from "@/types";
 
 export async function fetchTransactions(filters: FiltersProp) {
   const { type, category } = filters;
 
   try {
-    const response = await axios.get("http://localhost:4000/transactions/", {
+    const response = await axios.get("/api/transactions/", {
       params: {
         type,
         category,
@@ -25,7 +20,11 @@ export async function fetchTransactions(filters: FiltersProp) {
 
 export const updateSearchParams = (type: string, value: string) => {
   const searchParams = new URLSearchParams(window.location.search);
-  searchParams.set(type, value);
+  if (value === "") {
+    searchParams.delete(type);
+  } else {
+    searchParams.set(type, value);
+  }
   const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
 
   return newPathname;

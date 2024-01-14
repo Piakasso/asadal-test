@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Combobox } from "@headlessui/react";
@@ -17,6 +17,14 @@ const FilterDropdownButton = () => {
     setSelectedCategory(e.value === "" ? "all" : e.value);
     router.push(newPathname, { scroll: false });
   };
+
+  useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
+    const categoryQueryParam = searchParams.get("category");
+    if (categoryQueryParam) {
+      setSelectedCategory(categoryQueryParam);
+    }
+  }, []);
 
   const filteredCategories = filterCategories(categories, query);
 

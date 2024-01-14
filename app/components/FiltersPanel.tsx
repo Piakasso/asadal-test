@@ -48,7 +48,7 @@ const FiltersPanel = () => {
       </ul>
 
       <FilterDropdownButton />
-      <Calendar />
+      {/* <Calendar /> */}
     </div>
   );
 };

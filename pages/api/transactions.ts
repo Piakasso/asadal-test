@@ -183,7 +183,6 @@ export default function handler(_req: NextApiRequest, res: NextApiResponse) {
 
     res.status(200).send(filteredTransaction);
   } catch (err) {
-    console.error("Error:", err);
     res.status(500).send({ error: "failed to fetch data" });
   }
 }

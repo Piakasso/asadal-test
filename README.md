@@ -1,16 +1,11 @@
 ## Начало работы
 
 npm run dev
-
-# or
-
+### or
 yarn dev
-
-# or
-
+### or
 pnpm dev
-
-# or
+### or
 
 Откройте [http://localhost:3000](http://localhost:3000) в браузере чтобы увидеть результат.
 

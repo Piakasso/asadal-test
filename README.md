@@ -1,3 +1,5 @@
+Выполнено в рамках тестового задания на позицию junior+ разработчик [https://asadal-test.vercel.app](https://asadal-test.vercel.app)
+
 ## Начало работы
 
 npm run dev

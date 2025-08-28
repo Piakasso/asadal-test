@@ -3,11 +3,11 @@ import { FiltersProp, SumsByCategory, Transactions } from "@/types";
 
 export async function fetchTransactions(filters: FiltersProp) {
   const { type, category } = filters;
-
+  console.log(process.env.NEXT_PUBLIC_BASE_URL);
   try {
     const { startdate, enddate } = filters;
     const response = await axios.get(
-      `/api/transactions/?${startdate}&${enddate}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/transactions/?${startdate}&${enddate}`,
       {
         params: {
           type,
